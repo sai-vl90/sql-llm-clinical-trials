@@ -14,9 +14,10 @@ from langchain.chains import create_sql_query_chain
 import os
 import re
 from langchain_openai import AzureChatOpenAI
+from dotenv import load_dotenv
 
-os.environ["AZURE_OPENAI_API_KEY"] = "884c6ad5c66a46eea52b28b352056c5c"
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://amschatbot.openai.azure.com/"
+os.environ["AZURE_OPENAI_API_KEY"] = os.getenv('AZURE_OPENAI_API_KEY')
+os.environ["AZURE_OPENAI_ENDPOINT"] = os.getenv('AZURE_OPENAI_ENDPOINT')
 
 st.title("🤖 Unlocking Clinical Trial Insights: Leveraging LLMs for Database Queries")
 
